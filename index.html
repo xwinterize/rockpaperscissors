@@ -7,25 +7,70 @@
   </head>
 
   <body>
-    <h2>Let's Play Rock, Paper, Scissors!</h2>
-
-    <div>
-      <div>Make Your Selection:</div>
-      <button class="choicebutton" id="Rock">Rock</button>
-      <button class="choicebutton" id="Paper">Paper</button>
-      <button class="choicebutton" id="Scissors">Scissors</button>
+    <div class="welcomediv">
+      <h2>Let's Play Rock, Paper, Scissors!</h2>
     </div>
 
-    <h3>Computer Choice: <span id="computerChoice"></span></h3>
-    <h3>Player Choice: <span id="playerChoice"></span></h3>
+    <div class="welcomediv">Make Your Selection:</div>
+    <div class="selections">
+      <div class="button-container">
+        <button class="choicebutton" id="Rock">Rock</button>
+      </div>
+      <div class="button-container">
+        <button class="choicebutton" id="Paper">Paper</button>
+      </div>
+      <div class="button-container">
+        <button class="choicebutton" id="Scissors">Scissors</button>
+      </div>
+    </div>
 
-    <h3>Results: <span id="results"></span></h3>
+    <div class="choices">
+      <div>
+        <h3>
+          Computer Choice:
+          <div class="choiceresults"><span id="computerChoice"></span></div>
+        </h3>
+      </div>
+      <div>
+        <h3>
+          Player Choice:
+          <div class="choiceresults"><span id="playerChoice"></span></div>
+        </h3>
+      </div>
+    </div>
 
-    <h3>Computer Score: <span id="computerScore">0</span></h3>
-    <h3>Player Score: <span id="playerScore">0</span></h3>
+    <div class="choices">
+      <div>
+        <h3>
+          <div class="welcomediv">Results:</div>
+          <div class="choiceresults"><span id="results"></span></div>
+        </h3>
+      </div>
+    </div>
 
-    <h3><span id="winner"></span></h3>
-    <button id="startNew">Play Again</button>
+    <div class="choices">
+      <div>
+        <h3>
+          Computer Score:
+          <div class="scores"><span id="computerScore">0</span></div>
+        </h3>
+      </div>
+      <div>
+        <h3>
+          Player Score:
+          <div class="scores"><span id="playerScore">0</span></div>
+        </h3>
+      </div>
+    </div>
+
+    <div class="winnercontainer">
+      <div class="winnerdiv">
+        <h3><span id="winner"></span></h3>
+      </div>
+      <div>
+        <button id="startNew">Play Again</button>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
