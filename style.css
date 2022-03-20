@@ -12,6 +12,8 @@ body {
 .choices {
   display: flex;
   justify-content: space-evenly;
+  width: auto;
+  height: 75px;
 }
 
 .selections {
@@ -27,6 +29,7 @@ body {
 
 button {
   padding: 6px 26px;
+  background-color: aliceblue;
 }
 
 .choiceresults,
@@ -43,4 +46,5 @@ button {
 
 .winnerdiv {
   color: green;
+  height: 75px;
 }
