@@ -8,12 +8,16 @@ let userChoice;
 let computerChoice;
 let result;
 
+let playerScoreDisplay = 0;
+let computerScoreDisplay = 0;
+
 possibleChoices.forEach((possibleChoice) =>
   possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id;
     playerChoiceDisplay.innerHTML = userChoice;
     generateComputerChoice();
     getResults();
+    updateScore();
   })
 );
 
@@ -40,22 +44,43 @@ function getResults() {
   }
   if (computerChoice === 'Rock' && userChoice === 'Paper') {
     result = 'You Win! Paper beats Rock!';
+    playerScoreDisplay++;
   }
   if (computerChoice === 'Rock' && userChoice === 'Scissors') {
     result = 'You Lose! Rock beats Scissors!';
+    computerScoreDisplay++;
   }
   if (computerChoice === 'Paper' && userChoice === 'Rock') {
     result = 'You Lose! Paper beats Rock!';
+    computerScoreDisplay++;
   }
   if (computerChoice === 'Paper' && userChoice === 'Scissors') {
     result = 'You Win! Scissors beat Paper!';
+    playerScoreDisplay++;
   }
   if (computerChoice === 'Scissors' && userChoice === 'Paper') {
     result = 'You Lose! Scissors beat Paper!';
+    computerScoreDisplay++;
   }
   if (computerChoice === 'Scissors' && userChoice === 'Rock') {
     result = 'You Win! Rock beats Scissors!';
+    playerScoreDisplay++;
   }
 
   resultDisplay.innerHTML = result;
+}
+
+function updateScore() {
+  playerScore.innerHTML = playerScoreDisplay;
+  computerScore.innerHTML = computerScoreDisplay;
+}
+
+function checkWinner() {
+  if (playerScoreDisplay === 5 || computerScoreDisplay === 5) {
+    const winner =
+      playerScore === 5
+        ? 'You Win! Congratulations!'
+        : 'The Computer Wins! You Lose!';
+  }
+  playerScore.innerHTML = winner;
 }
