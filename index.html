@@ -11,9 +11,9 @@
 
     <div>
       <div>Make Your Selection:</div>
-      <button id="Rock">Rock</button>
-      <button id="Paper">Paper</button>
-      <button id="Scissors">Scissors</button>
+      <button class="choicebutton" id="Rock">Rock</button>
+      <button class="choicebutton" id="Paper">Paper</button>
+      <button class="choicebutton" id="Scissors">Scissors</button>
     </div>
 
     <h3>Computer Choice: <span id="computerChoice"></span></h3>
@@ -21,8 +21,11 @@
 
     <h3>Results: <span id="results"></span></h3>
 
-    <h3>Computer Score: <span id="computerScore"></span></h3>
-    <h3>Player Score: <span id="playerScore"></span></h3>
+    <h3>Computer Score: <span id="computerScore">0</span></h3>
+    <h3>Player Score: <span id="playerScore">0</span></h3>
+
+    <h3><span id="winner"></span></h3>
+    <button id="startNew">Play Again</button>
 
     <script src="script.js"></script>
   </body>

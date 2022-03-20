@@ -2,14 +2,21 @@ const computerChoiceDisplay = document.getElementById('computerChoice');
 const playerChoiceDisplay = document.getElementById('playerChoice');
 const resultDisplay = document.getElementById('results');
 
-const possibleChoices = document.querySelectorAll('button');
+const possibleChoices = document.querySelectorAll('.choicebutton');
 
 let userChoice;
 let computerChoice;
 let result;
 
+let playerScore = document.getElementById('playerScore');
+let computerScore = document.getElementById('computerScore');
+
 let playerScoreDisplay = 0;
 let computerScoreDisplay = 0;
+
+let winnerDisplay = document.getElementById('winner');
+
+let resetButton = document.getElementById('startNew');
 
 possibleChoices.forEach((possibleChoice) =>
   possibleChoice.addEventListener('click', (e) => {
@@ -18,6 +25,7 @@ possibleChoices.forEach((possibleChoice) =>
     generateComputerChoice();
     getResults();
     updateScore();
+    checkWinner();
   })
 );
 
@@ -76,11 +84,18 @@ function updateScore() {
 }
 
 function checkWinner() {
-  if (playerScoreDisplay === 5 || computerScoreDisplay === 5) {
-    const winner =
-      playerScore === 5
-        ? 'You Win! Congratulations!'
-        : 'The Computer Wins! You Lose!';
+  if (playerScoreDisplay === 5) {
+    winnerDisplay.innerHTML = 'You Won the Game! Congratulations!';
+  } else if (computerScoreDisplay === 5) {
+    winnerDisplay.innerHTML = 'Oh no! You Lost to the Computer!';
   }
-  playerScore.innerHTML = winner;
 }
+
+resetButton.addEventListener('click', function newGame() {
+  computerChoiceDisplay.innerHTML = '';
+  playerChoiceDisplay.innerHTML = '';
+  resultDisplay.innerHTML = '';
+  playerScore.innerHTML = 0;
+  computerScore.innerHTML = 0;
+  winnerDisplay.innerHTML = '';
+});
